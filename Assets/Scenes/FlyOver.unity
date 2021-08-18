@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 79758d46dc10ee34488f28df17d32c07, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -292,13 +292,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.15063015, y: -0, z: -0, w: 0.98859024}
-  m_LocalPosition: {x: -0.35, y: 10.18, z: -14.12}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.85, y: 7.81, z: -14.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 17.327, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6094710636304135015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,13 +310,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LandPad
       objectReference: {fileID: 0}
+    - target: {fileID: 4518288608992612897, guid: b5b2813972127cb4381ec348ea194770, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 5545150438259647355, guid: b5b2813972127cb4381ec348ea194770, type: 3}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5545150438259647355, guid: b5b2813972127cb4381ec348ea194770, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.18
+      value: 6.76
       objectReference: {fileID: 0}
     - target: {fileID: 5545150438259647355, guid: b5b2813972127cb4381ec348ea194770, type: 3}
       propertyPath: m_LocalPosition.y
@@ -372,12 +376,20 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8603771476036615935, guid: ebceea590da9a4540a850f48be7bab60, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.6664
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603771476036615935, guid: ebceea590da9a4540a850f48be7bab60, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603771476036615935, guid: ebceea590da9a4540a850f48be7bab60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.53
       objectReference: {fileID: 0}
     - target: {fileID: 8603771476036615935, guid: ebceea590da9a4540a850f48be7bab60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.63
+      value: 3.52
       objectReference: {fileID: 0}
     - target: {fileID: 8603771476036615935, guid: ebceea590da9a4540a850f48be7bab60, type: 3}
       propertyPath: m_LocalPosition.z
@@ -483,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1852132616530094732, guid: 2c4384914e39dbf458c736875cddfaf0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.979999
+      value: -8.389998
       objectReference: {fileID: 0}
     - target: {fileID: 1852132616530094732, guid: 2c4384914e39dbf458c736875cddfaf0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -525,6 +537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaunchPad
       objectReference: {fileID: 0}
+    - target: {fileID: 4545777000079653634, guid: 2c4384914e39dbf458c736875cddfaf0, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c4384914e39dbf458c736875cddfaf0, type: 3}
 --- !u!1001 &8351872162150831493
@@ -540,11 +556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3684250162255429506, guid: a5839ea9ca44e12449315ce888c908c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.88
+      value: -8.29
       objectReference: {fileID: 0}
     - target: {fileID: 3684250162255429506, guid: a5839ea9ca44e12449315ce888c908c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.34
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: 3684250162255429506, guid: a5839ea9ca44e12449315ce888c908c3, type: 3}
       propertyPath: m_LocalPosition.z
