@@ -1,11 +1,28 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float loadDelay = 1f;
+    [SerializeField] float explosionVolme = 0.5f;
+
+    [SerializeField] AudioClip Explosion;
+    [SerializeField] AudioClip Success;
+
+    AudioSource audioSource;
+
+    bool isTransitioning = false;
+
+      void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
+        if (isTransitioning) { return; }
+
         switch(collision.gameObject.tag)
         {
  
@@ -25,13 +42,19 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrashSequence()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         GetComponent<Movement>().enabled = false;
+        audioSource.PlayOneShot(Explosion, explosionVolme);
         Invoke("ReloadLevel", loadDelay);
     }
 
     void ConfrimFinish()
     {
+        isTransitioning = true;
         GetComponent<Movement>().enabled = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(Success, 1);
         Invoke("LoadNextLevel", loadDelay);
     }
 
