@@ -9,6 +9,10 @@ public class Movement : MonoBehaviour
 
     [SerializeField] AudioClip mainEngine;
 
+    [SerializeField] ParticleSystem PartBoost;
+    [SerializeField] ParticleSystem PartLeft;
+    [SerializeField] ParticleSystem PartRight;
+
     Rigidbody rb;
     AudioSource audioSource;
 
@@ -31,16 +35,31 @@ public class Movement : MonoBehaviour
         //Thrust
         if(Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine, 1);
-            }
+            StartThursting();
         }
-        else 
+        else
         {
-            audioSource.Stop();
+            StopThursting();
         }
+    }
+
+    void StartThursting()
+    {
+        if (!PartBoost.isPlaying)
+        {
+            PartBoost.Play();
+        }
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine, 1);
+        }
+    }
+
+    void StopThursting()
+    {
+        PartBoost.Stop();
+        audioSource.Stop();
     }
 
     void ProcessRotation()
@@ -48,14 +67,44 @@ public class Movement : MonoBehaviour
         //Left
         if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(rotThrust);        
+            RotateLeft();
         }
 
         //Right
-        if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(-rotThrust);
+            RotateRight();
         }
+        //Stop
+        else
+        {
+            StopRotating();
+        }
+    }
+
+
+    void RotateLeft()
+    {
+        if (!PartLeft.isPlaying)
+        {
+            PartLeft.Play();
+        }
+        ApplyRotation(rotThrust);
+    }
+
+    void RotateRight()
+    {
+        if (!PartRight.isPlaying)
+        {
+            PartRight.Play();
+        }
+        ApplyRotation(-rotThrust);
+    }
+
+    void StopRotating()
+    {
+        PartRight.Stop();
+        PartLeft.Stop();
     }
 
     void ApplyRotation(float rotationThisFrame)

@@ -10,6 +10,9 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip Explosion;
     [SerializeField] AudioClip Success;
 
+    [SerializeField] ParticleSystem PartExplosion;
+    [SerializeField] ParticleSystem PartSuccess;
+
     AudioSource audioSource;
 
     bool isTransitioning = false;
@@ -43,6 +46,7 @@ public class CollisionHandler : MonoBehaviour
     void StartCrashSequence()
     {
         isTransitioning = true;
+        PartExplosion.Play();
         audioSource.Stop();
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(Explosion, explosionVolme);
@@ -52,6 +56,7 @@ public class CollisionHandler : MonoBehaviour
     void ConfrimFinish()
     {
         isTransitioning = true;
+        PartSuccess.Play();
         GetComponent<Movement>().enabled = false;
         audioSource.Stop();
         audioSource.PlayOneShot(Success, 1);
