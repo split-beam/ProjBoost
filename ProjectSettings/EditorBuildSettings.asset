@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/FlyOver.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/FlyAround.unity
+    guid: e5a13b33b3e13674a996a4574ce1b314
+  - enabled: 1
+    path: Assets/Scenes/FlyUnder.unity
+    guid: 53cde50e263847841b30374fc832242b
+  - enabled: 0
     path: Assets/Scenes/Under.unity
     guid: 2d8e3db9920c0934885782f675efe3a5
+  - enabled: 0
+    path: Assets/Scenes/FlyMove.unity
+    guid: 720cc8d3145fee44b9a3fae5e8a4a130
   m_configObjects: {}
